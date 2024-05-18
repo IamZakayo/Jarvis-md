@@ -23,7 +23,7 @@ System({
     type: "info",
     dontAddCommandList: true,
 }, async (message) => {
-    let [date, time] = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }).split(",");
+    let [date, time] = new Date().toLocaleString("en-IN", { timeZone: "Africa/Nairobi" }).split(",");
     let menu = `╭━━━〔 ${BOT_INFO.split(';')[0]} ⁩〕━━━┈⊷\n┃⛯╭──────────────\n┃⛯│ *owner* :  ${BOT_INFO.split(';')[1]}\n┃⛯│ *user* : ${message.pushName.replace(/[\r\n]+/gm, "")}\n┃⛯│ *plugins* : ${plugins.commands.length}\n┃⛯│ *date* : ${date}\n┃⛯│ *time* : ${time}\n┃⛯│ *uptime* : ${clockString(uptime())} \n┃⛯│ *version* : ᴠ${version}\n┃⛯╰──────────────\n╰━━━━━━━━━━━━━━━┈⊷\n\n\n╭━━━━━━━━━━━━━━━┈⊷\n╽`;
     let cmnd = [], category = [];
     plugins.commands.forEach(command => {
@@ -37,7 +37,7 @@ System({
     cmnd.sort();
     category.sort().forEach(cmmd => {
         menu += `\n┃  ╭─────────────┈⊷\n┃  │  *${cmmd} ⏎*\n┃  ╰┬────────────┈⊷\n┃  ┌┤`;
-        cmnd.filter(({ type }) => type == cmmd).forEach(({ cmd }) => menu += `\n┃  │ ☍  *${cmd.trim()}*`);
+        cmnd.filter(({ type }) => type == cmmd).forEach(({ cmd }) => menu += `\n┃  │ °  *${cmd.trim()}*`);
         menu += `\n┃  ╰─────────────┈⊷`;
     });
     menu += ` ╰━━━━━━━━━━━┈⊷\n`;
